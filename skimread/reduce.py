@@ -93,7 +93,7 @@ def template(text: str) -> str:
 
 # --- generic reduction ----------------------------------------------------------
 
-def collapse(lines: List[Line], similar_min: int = 4, keep_verbatim: bool = False) -> List[Line]:
+def collapse(lines: List[Line], similar_min: int = 4, keep_verbatim: bool = False, dup_min: int = 2) -> List[Line]:
     """Drop progress noise, squeeze blank runs, fold exact and near duplicates.
 
     keep_verbatim disables near-duplicate folding (used for source-like output
@@ -118,7 +118,7 @@ def collapse(lines: List[Line], similar_min: int = 4, keep_verbatim: bool = Fals
         j = i + 1
         while j < n and lines[j].text == ln.text and lines[j].score >= 0:
             j += 1
-        if j - i >= 2:
+        if j - i >= dup_min:
             cnt = j - i
             out.append(Line(ln.no, f"{ln.text}   (x{cnt}, lines {ln.no}-{lines[j - 1].no})", ln.score))
             i = j
@@ -161,34 +161,45 @@ def fit_budget(lines: List[Line], budget: int, head: int = 8, tail: int = 20, co
         return lines
     n = len(lines)
     keep = [False] * n
+    size = [len(l.text) + 1 for l in lines]
+    used = 0
+
+    def mark(k: int) -> None:
+        nonlocal used
+        if not keep[k]:
+            keep[k] = True
+            used += size[k]
+
+    def unmark(k: int) -> None:
+        nonlocal used
+        if keep[k]:
+            keep[k] = False
+            used -= size[k]
+
     for k in range(min(head, n)):
-        keep[k] = True
+        mark(k)
     for k in range(max(0, n - tail), n):
-        keep[k] = True
-
-    def used() -> int:
-        return sum(len(lines[k].text) + 1 for k in range(n) if keep[k])
-
+        mark(k)
     # windows around important lines, best first
     order = sorted((k for k in range(n) if lines[k].score >= 2), key=lambda k: (-lines[k].score, k))
     for k in order:
         lo, hi = max(0, k - context), min(n, k + context + 1)
-        add = sum(len(lines[m].text) + 1 for m in range(lo, hi) if not keep[m])
-        if used() + add > budget:
-            if not keep[k] and used() + len(lines[k].text) + 1 <= budget:
-                keep[k] = True
+        add = sum(size[m] for m in range(lo, hi) if not keep[m])
+        if used + add > budget:
+            if not keep[k] and used + size[k] <= budget:
+                mark(k)
             continue
         for m in range(lo, hi):
-            keep[m] = True
+            mark(m)
     # if head+tail alone overflow, trim the head
     k = min(head, n) - 1
-    while used() > budget and k >= 0:
-        keep[k] = False
+    while used > budget and k >= 0:
+        unmark(k)
         k -= 1
     # then trim the tail from its start
     k = max(0, n - tail)
-    while used() > budget and k < n - 3:
-        keep[k] = False
+    while used > budget and k < n - 3:
+        unmark(k)
         k += 1
 
     out: List[Line] = []

@@ -65,3 +65,13 @@ def test_fit_budget_keeps_errors_and_names_gaps():
 def test_fit_budget_noop_when_small():
     lines = to_lines("a\nb\nc")
     assert fit_budget(lines, 100) is lines
+
+
+def test_fit_budget_is_fast_on_huge_noisy_output():
+    import time
+    lines = to_lines("\n".join(f"ERROR item {i} failed" for i in range(60000)))
+    score_all(lines)
+    t = time.time()
+    out = fit_budget(lines, budget=5000)
+    assert time.time() - t < 2.0
+    assert sum(len(l.text) + 1 for l in out) <= 5000 + 400

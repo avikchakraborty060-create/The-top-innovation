@@ -73,8 +73,11 @@ def next_id() -> int:
             fcntl.flock(fd, fcntl.LOCK_EX)
         except (ImportError, OSError):
             pass
-        raw = os.read(fd, 32).decode() or "0"
-        n = int(raw.strip() or 0) + 1
+        raw = os.read(fd, 32).decode(errors="replace")
+        try:
+            n = int(raw.strip() or 0) + 1
+        except ValueError:
+            n = int(time.time())  # corrupt counter: jump to a unique-enough id
         os.lseek(fd, 0, 0)
         os.ftruncate(fd, 0)
         os.write(fd, str(n).encode())

@@ -37,7 +37,7 @@ GIT_NOISY = {"diff", "log", "show", "status", "blame", "grep", "ls-files"}
 _DANGEROUS = re.compile(
     r"(?:^|[\s;&|(])(?:rm|rmdir|sudo|su|mv|cp|chmod|chown|chgrp|dd|mkfs|shred|truncate|kill|killall|pkill|"
     r"reboot|shutdown|crontab|systemctl|launchctl|ssh|scp|rsync|curl|wget|nc|ncat|telnet|eval|exec|"
-    r"xargs|tee|install|ln|passwd|useradd|apt-get\s+remove|npm\s+publish|cargo\s+publish|twine|"
+    r"xargs|tee|ln|passwd|useradd|apt-get\s+remove|npm\s+publish|cargo\s+publish|twine|"
     r"gh\s+(?:pr|release|repo)\s+(?:create|merge|delete|edit)|git\s+(?:push|reset|checkout|switch|rebase|clean|"
     r"stash|commit|merge|cherry-pick|revert|am|apply|filter-branch|branch\s+-[dD]|tag\s+-d|rm|mv|restore|"
     r"remote|config))(?:\s|$)"
@@ -129,10 +129,11 @@ def bash_hook(payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     try:
         import subprocess
         bash = shutil.which("bash")
-        if bash:
-            chk = subprocess.run([bash, "-n", "-c", new_cmd], capture_output=True, timeout=5)
-            if chk.returncode != 0:
-                return None
+        if not bash:
+            return None  # no bash (e.g. Windows): leave the command alone
+        chk = subprocess.run([bash, "-n", "-c", new_cmd], capture_output=True, timeout=5)
+        if chk.returncode != 0:
+            return None
     except Exception:
         return None
     updated = dict(ti, command=new_cmd)

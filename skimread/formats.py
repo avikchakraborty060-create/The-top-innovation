@@ -388,12 +388,11 @@ def reduce_gitdiff(lines: List[Line], ctx: Ctx) -> List[Line]:
 # --- verbatim-ish (file dumps, listings, grep) ------------------------------------------
 
 def reduce_verbatim(lines: List[Line], ctx: Ctx) -> List[Line]:
-    score_all(lines)
+    # File content is not a log: "error" in source code is not important, no line
+    # is progress noise, and identical neighbours (closing braces) are real content.
     for ln in lines:
-        # file content is not a log: do not treat "error" in source as important,
-        # and never drop lines as progress noise
-        ln.score = 0 if ln.score != 0 else 0
-    return collapse(lines, keep_verbatim=True)
+        ln.score = 0
+    return collapse(lines, keep_verbatim=True, dup_min=5)
 
 
 def reduce_find(lines: List[Line], ctx: Ctx) -> List[Line]:

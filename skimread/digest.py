@@ -59,7 +59,8 @@ def build_digest(raw: str, cmd: str = "", exit_code: Optional[int] = None, durat
         if duration is not None:
             status += f" in {duration:.1f}s"
     shown = len(fitted)
-    header_bits = [f"$ {cmd}" if cmd else "$ (stdin)"]
+    shown_cmd = cmd if len(cmd) <= 300 else cmd[:280] + " …"
+    header_bits = [f"$ {shown_cmd}" if cmd else "$ (stdin)"]
     if status:
         header_bits.append(status)
     header = "  ·  ".join(header_bits)

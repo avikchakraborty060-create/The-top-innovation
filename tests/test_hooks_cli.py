@@ -38,6 +38,10 @@ from skimread.setup import install, settings_path
     ("ls", False, True),
     ("FOO=1 uv run pytest", True, True),
     ("python3", False, False),
+    ("npm install", True, True),
+    ("pip install -r requirements.txt", True, True),
+    ("uv pip install -e .", True, True),
+    ("npm install express > log.txt", False, False),
 ])
 def test_should_wrap(cmd, noisy, all_):
     assert hooks.should_wrap(cmd, "noisy") is noisy
