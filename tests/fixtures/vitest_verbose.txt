@@ -1,0 +1,653 @@
+
+ RUN  v5.0.2 /home/dev/project/jsproj
+
+ ✓ src/m101.test.ts > module 101 > adds 1ms
+ ✓ src/m101.test.ts > module 101 > concats 0ms
+ ✓ src/m101.test.ts > module 101 > objects 1ms
+ ✓ src/m101.test.ts > module 101 > arrays 1ms
+ ✓ src/m101.test.ts > module 101 > truthy 0ms
+ ✓ src/m100.test.ts > module 100 > adds 3ms
+ ✓ src/m100.test.ts > module 100 > concats 1ms
+ ✓ src/m100.test.ts > module 100 > objects 1ms
+ ✓ src/m100.test.ts > module 100 > arrays 1ms
+ ✓ src/m100.test.ts > module 100 > truthy 0ms
+ ✓ src/m102.test.ts > module 102 > adds 1ms
+ ✓ src/m102.test.ts > module 102 > concats 0ms
+ ✓ src/m102.test.ts > module 102 > objects 1ms
+ ✓ src/m102.test.ts > module 102 > arrays 1ms
+ ✓ src/m102.test.ts > module 102 > truthy 0ms
+ ✓ src/m105.test.ts > module 105 > adds 2ms
+ ✓ src/m105.test.ts > module 105 > concats 0ms
+ ✓ src/m105.test.ts > module 105 > objects 1ms
+ ✓ src/m105.test.ts > module 105 > arrays 1ms
+ ✓ src/m105.test.ts > module 105 > truthy 0ms
+ ✓ src/m103.test.ts > module 103 > adds 1ms
+ ✓ src/m103.test.ts > module 103 > concats 0ms
+ ✓ src/m103.test.ts > module 103 > objects 1ms
+ ✓ src/m103.test.ts > module 103 > arrays 1ms
+ ✓ src/m103.test.ts > module 103 > truthy 0ms
+ ✓ src/m104.test.ts > module 104 > adds 3ms
+ ✓ src/m104.test.ts > module 104 > concats 0ms
+ ✓ src/m104.test.ts > module 104 > objects 1ms
+ ✓ src/m104.test.ts > module 104 > arrays 1ms
+ ✓ src/m104.test.ts > module 104 > truthy 0ms
+ ✓ src/m107.test.ts > module 107 > adds 1ms
+ ✓ src/m107.test.ts > module 107 > concats 0ms
+ ✓ src/m107.test.ts > module 107 > objects 1ms
+ ✓ src/m107.test.ts > module 107 > arrays 1ms
+ ✓ src/m107.test.ts > module 107 > truthy 0ms
+ ✓ src/m106.test.ts > module 106 > adds 2ms
+ ✓ src/m106.test.ts > module 106 > concats 0ms
+ ✓ src/m106.test.ts > module 106 > objects 1ms
+ ✓ src/m106.test.ts > module 106 > arrays 1ms
+ ✓ src/m106.test.ts > module 106 > truthy 0ms
+ ✓ src/m108.test.ts > module 108 > adds 1ms
+ ✓ src/m108.test.ts > module 108 > concats 0ms
+ ✓ src/m108.test.ts > module 108 > objects 1ms
+ ✓ src/m108.test.ts > module 108 > arrays 1ms
+ ✓ src/m108.test.ts > module 108 > truthy 1ms
+ ✓ src/m109.test.ts > module 109 > adds 2ms
+ ✓ src/m109.test.ts > module 109 > concats 0ms
+ ✓ src/m109.test.ts > module 109 > objects 1ms
+ ✓ src/m109.test.ts > module 109 > arrays 4ms
+ ✓ src/m109.test.ts > module 109 > truthy 0ms
+ ✓ src/m110.test.ts > module 110 > adds 1ms
+ ✓ src/m110.test.ts > module 110 > concats 0ms
+ ✓ src/m110.test.ts > module 110 > objects 1ms
+ ✓ src/m110.test.ts > module 110 > arrays 1ms
+ ✓ src/m110.test.ts > module 110 > truthy 0ms
+ ✓ src/m111.test.ts > module 111 > adds 1ms
+ ✓ src/m111.test.ts > module 111 > concats 0ms
+ ✓ src/m111.test.ts > module 111 > objects 1ms
+ ✓ src/m111.test.ts > module 111 > arrays 1ms
+ ✓ src/m111.test.ts > module 111 > truthy 0ms
+ ✓ src/m112.test.ts > module 112 > adds 1ms
+ ✓ src/m112.test.ts > module 112 > concats 0ms
+ ✓ src/m112.test.ts > module 112 > objects 1ms
+ ✓ src/m112.test.ts > module 112 > arrays 1ms
+ ✓ src/m112.test.ts > module 112 > truthy 0ms
+ ✓ src/m113.test.ts > module 113 > adds 1ms
+ ✓ src/m113.test.ts > module 113 > concats 0ms
+ ✓ src/m113.test.ts > module 113 > objects 1ms
+ ✓ src/m113.test.ts > module 113 > arrays 1ms
+ ✓ src/m113.test.ts > module 113 > truthy 0ms
+ ✓ src/m114.test.ts > module 114 > adds 2ms
+ ✓ src/m114.test.ts > module 114 > concats 0ms
+ ✓ src/m114.test.ts > module 114 > objects 1ms
+ ✓ src/m114.test.ts > module 114 > arrays 1ms
+ ✓ src/m114.test.ts > module 114 > truthy 0ms
+ ✓ src/m115.test.ts > module 115 > adds 1ms
+ ✓ src/m115.test.ts > module 115 > concats 0ms
+ ✓ src/m115.test.ts > module 115 > objects 1ms
+ ✓ src/m115.test.ts > module 115 > arrays 1ms
+ ✓ src/m115.test.ts > module 115 > truthy 0ms
+ ✓ src/m116.test.ts > module 116 > adds 1ms
+ ✓ src/m116.test.ts > module 116 > concats 0ms
+ ✓ src/m116.test.ts > module 116 > objects 1ms
+ ✓ src/m116.test.ts > module 116 > arrays 1ms
+ ✓ src/m116.test.ts > module 116 > truthy 0ms
+ ✓ src/m117.test.ts > module 117 > adds 1ms
+ ✓ src/m117.test.ts > module 117 > concats 0ms
+ ✓ src/m117.test.ts > module 117 > objects 1ms
+ ✓ src/m117.test.ts > module 117 > arrays 1ms
+ ✓ src/m117.test.ts > module 117 > truthy 0ms
+ ✓ src/m118.test.ts > module 118 > adds 2ms
+ ✓ src/m118.test.ts > module 118 > concats 1ms
+ ✓ src/m118.test.ts > module 118 > objects 1ms
+ ✓ src/m118.test.ts > module 118 > arrays 1ms
+ ✓ src/m118.test.ts > module 118 > truthy 0ms
+ ✓ src/m119.test.ts > module 119 > adds 2ms
+ ✓ src/m119.test.ts > module 119 > concats 1ms
+ ✓ src/m119.test.ts > module 119 > objects 1ms
+ ✓ src/m119.test.ts > module 119 > arrays 1ms
+ ✓ src/m119.test.ts > module 119 > truthy 0ms
+ ✓ src/m120.test.ts > module 120 > adds 2ms
+ ✓ src/m120.test.ts > module 120 > concats 0ms
+ ✓ src/m120.test.ts > module 120 > objects 1ms
+ ✓ src/m120.test.ts > module 120 > arrays 1ms
+ ✓ src/m120.test.ts > module 120 > truthy 0ms
+ ✓ src/m13.test.ts > module 13 > adds 1ms
+ ✓ src/m13.test.ts > module 13 > concats 0ms
+ ✓ src/m13.test.ts > module 13 > objects 1ms
+ ✓ src/m13.test.ts > module 13 > arrays 1ms
+ ✓ src/m13.test.ts > module 13 > truthy 0ms
+ ✓ src/m14.test.ts > module 14 > adds 1ms
+ ✓ src/m14.test.ts > module 14 > concats 0ms
+ ✓ src/m14.test.ts > module 14 > objects 1ms
+ ✓ src/m14.test.ts > module 14 > arrays 1ms
+ ✓ src/m14.test.ts > module 14 > truthy 0ms
+ ✓ src/m15.test.ts > module 15 > adds 1ms
+ ✓ src/m15.test.ts > module 15 > concats 0ms
+ ✓ src/m15.test.ts > module 15 > objects 1ms
+ ✓ src/m15.test.ts > module 15 > arrays 1ms
+ ✓ src/m15.test.ts > module 15 > truthy 0ms
+ ✓ src/m16.test.ts > module 16 > adds 2ms
+ ✓ src/m16.test.ts > module 16 > concats 0ms
+ ✓ src/m16.test.ts > module 16 > objects 1ms
+ ✓ src/m16.test.ts > module 16 > arrays 1ms
+ ✓ src/m16.test.ts > module 16 > truthy 0ms
+ ✓ src/m17.test.ts > module 17 > adds 1ms
+ ✓ src/m17.test.ts > module 17 > concats 0ms
+ ✓ src/m17.test.ts > module 17 > objects 1ms
+ ✓ src/m17.test.ts > module 17 > arrays 1ms
+ ✓ src/m17.test.ts > module 17 > truthy 0ms
+ ✓ src/m18.test.ts > module 18 > adds 3ms
+ ✓ src/m18.test.ts > module 18 > concats 0ms
+ ✓ src/m18.test.ts > module 18 > objects 1ms
+ ✓ src/m18.test.ts > module 18 > arrays 1ms
+ ✓ src/m18.test.ts > module 18 > truthy 0ms
+ ✓ src/m19.test.ts > module 19 > adds 1ms
+ ✓ src/m19.test.ts > module 19 > concats 0ms
+ ✓ src/m19.test.ts > module 19 > objects 1ms
+ ✓ src/m19.test.ts > module 19 > arrays 1ms
+ ✓ src/m19.test.ts > module 19 > truthy 0ms
+ ✓ src/m20.test.ts > module 20 > adds 2ms
+ ✓ src/m20.test.ts > module 20 > concats 0ms
+ ✓ src/m20.test.ts > module 20 > objects 1ms
+ ✓ src/m20.test.ts > module 20 > arrays 1ms
+ ✓ src/m20.test.ts > module 20 > truthy 0ms
+ ✓ src/m21.test.ts > module 21 > adds 2ms
+ ✓ src/m21.test.ts > module 21 > concats 0ms
+ ✓ src/m21.test.ts > module 21 > objects 1ms
+ ✓ src/m21.test.ts > module 21 > arrays 1ms
+ ✓ src/m21.test.ts > module 21 > truthy 0ms
+ ✓ src/m22.test.ts > module 22 > adds 1ms
+ ✓ src/m22.test.ts > module 22 > concats 0ms
+ ✓ src/m22.test.ts > module 22 > objects 1ms
+ ✓ src/m22.test.ts > module 22 > arrays 1ms
+ ✓ src/m22.test.ts > module 22 > truthy 0ms
+ ✓ src/m23.test.ts > module 23 > adds 1ms
+ ✓ src/m23.test.ts > module 23 > concats 0ms
+ ✓ src/m23.test.ts > module 23 > objects 1ms
+ ✓ src/m23.test.ts > module 23 > arrays 1ms
+ ✓ src/m23.test.ts > module 23 > truthy 0ms
+ ✓ src/m24.test.ts > module 24 > adds 1ms
+ ✓ src/m24.test.ts > module 24 > concats 0ms
+ ✓ src/m24.test.ts > module 24 > objects 1ms
+ ✓ src/m24.test.ts > module 24 > arrays 1ms
+ ✓ src/m24.test.ts > module 24 > truthy 0ms
+ ✓ src/m25.test.ts > module 25 > adds 2ms
+ ✓ src/m25.test.ts > module 25 > concats 1ms
+ ✓ src/m25.test.ts > module 25 > objects 1ms
+ ✓ src/m25.test.ts > module 25 > arrays 2ms
+ ✓ src/m25.test.ts > module 25 > truthy 1ms
+ ✓ src/m26.test.ts > module 26 > adds 2ms
+ ✓ src/m26.test.ts > module 26 > concats 0ms
+ ✓ src/m26.test.ts > module 26 > objects 1ms
+ ✓ src/m26.test.ts > module 26 > arrays 1ms
+ ✓ src/m26.test.ts > module 26 > truthy 0ms
+ ✓ src/m27.test.ts > module 27 > adds 1ms
+ ✓ src/m27.test.ts > module 27 > concats 0ms
+ ✓ src/m27.test.ts > module 27 > objects 1ms
+ ✓ src/m27.test.ts > module 27 > arrays 1ms
+ ✓ src/m27.test.ts > module 27 > truthy 0ms
+ ✓ src/m28.test.ts > module 28 > adds 2ms
+ ✓ src/m28.test.ts > module 28 > concats 0ms
+ ✓ src/m28.test.ts > module 28 > objects 1ms
+ ✓ src/m28.test.ts > module 28 > arrays 1ms
+ ✓ src/m28.test.ts > module 28 > truthy 0ms
+ ✓ src/m29.test.ts > module 29 > adds 1ms
+ ✓ src/m29.test.ts > module 29 > concats 1ms
+ ✓ src/m29.test.ts > module 29 > objects 2ms
+ ✓ src/m29.test.ts > module 29 > arrays 1ms
+ ✓ src/m29.test.ts > module 29 > truthy 0ms
+ ✓ src/m30.test.ts > module 30 > adds 2ms
+ ✓ src/m30.test.ts > module 30 > concats 0ms
+ ✓ src/m30.test.ts > module 30 > objects 1ms
+ ✓ src/m30.test.ts > module 30 > arrays 1ms
+ ✓ src/m30.test.ts > module 30 > truthy 0ms
+ ✓ src/m31.test.ts > module 31 > adds 2ms
+ ✓ src/m31.test.ts > module 31 > concats 0ms
+ ✓ src/m31.test.ts > module 31 > objects 1ms
+ ✓ src/m31.test.ts > module 31 > arrays 1ms
+ ✓ src/m31.test.ts > module 31 > truthy 0ms
+ ✓ src/m32.test.ts > module 32 > adds 2ms
+ ✓ src/m32.test.ts > module 32 > concats 0ms
+ ✓ src/m32.test.ts > module 32 > objects 1ms
+ ✓ src/m32.test.ts > module 32 > arrays 1ms
+ ✓ src/m32.test.ts > module 32 > truthy 0ms
+ ✓ src/m33.test.ts > module 33 > adds 2ms
+ ✓ src/m33.test.ts > module 33 > concats 0ms
+ ✓ src/m33.test.ts > module 33 > objects 1ms
+ ✓ src/m33.test.ts > module 33 > arrays 1ms
+ ✓ src/m33.test.ts > module 33 > truthy 0ms
+ ✓ src/m35.test.ts > module 35 > adds 2ms
+ ✓ src/m35.test.ts > module 35 > concats 0ms
+ ✓ src/m35.test.ts > module 35 > objects 1ms
+ ✓ src/m35.test.ts > module 35 > arrays 1ms
+ ✓ src/m35.test.ts > module 35 > truthy 0ms
+ ✓ src/m34.test.ts > module 34 > adds 2ms
+ ✓ src/m34.test.ts > module 34 > concats 0ms
+ ✓ src/m34.test.ts > module 34 > objects 1ms
+ ✓ src/m34.test.ts > module 34 > arrays 1ms
+ ✓ src/m34.test.ts > module 34 > truthy 0ms
+ ✓ src/m36.test.ts > module 36 > adds 1ms
+ ✓ src/m36.test.ts > module 36 > concats 0ms
+ ✓ src/m36.test.ts > module 36 > objects 1ms
+ ✓ src/m36.test.ts > module 36 > arrays 1ms
+ ✓ src/m36.test.ts > module 36 > truthy 0ms
+ ✓ src/m37.test.ts > module 37 > adds 1ms
+ ✓ src/m37.test.ts > module 37 > concats 0ms
+ ✓ src/m37.test.ts > module 37 > objects 1ms
+ ✓ src/m37.test.ts > module 37 > arrays 1ms
+ ✓ src/m37.test.ts > module 37 > truthy 0ms
+ ✓ src/m38.test.ts > module 38 > adds 1ms
+ ✓ src/m38.test.ts > module 38 > concats 0ms
+ ✓ src/m38.test.ts > module 38 > objects 1ms
+ ✓ src/m38.test.ts > module 38 > arrays 1ms
+ ✓ src/m38.test.ts > module 38 > truthy 0ms
+ ✓ src/m39.test.ts > module 39 > adds 1ms
+ ✓ src/m39.test.ts > module 39 > concats 0ms
+ ✓ src/m39.test.ts > module 39 > objects 1ms
+ ✓ src/m39.test.ts > module 39 > arrays 1ms
+ ✓ src/m39.test.ts > module 39 > truthy 0ms
+ ✓ src/m40.test.ts > module 40 > adds 1ms
+ ✓ src/m40.test.ts > module 40 > concats 0ms
+ ✓ src/m40.test.ts > module 40 > objects 1ms
+ ✓ src/m40.test.ts > module 40 > arrays 1ms
+ ✓ src/m40.test.ts > module 40 > truthy 0ms
+ ✓ src/m41.test.ts > module 41 > adds 2ms
+ ✓ src/m41.test.ts > module 41 > concats 0ms
+ ✓ src/m41.test.ts > module 41 > objects 1ms
+ ✓ src/m41.test.ts > module 41 > arrays 1ms
+ ✓ src/m41.test.ts > module 41 > truthy 0ms
+ ✓ src/m42.test.ts > module 42 > adds 1ms
+ ✓ src/m42.test.ts > module 42 > concats 1ms
+ ✓ src/m42.test.ts > module 42 > objects 1ms
+ ✓ src/m42.test.ts > module 42 > arrays 1ms
+ ✓ src/m42.test.ts > module 42 > truthy 0ms
+ ✓ src/m43.test.ts > module 43 > adds 1ms
+ ✓ src/m43.test.ts > module 43 > concats 0ms
+ ✓ src/m43.test.ts > module 43 > objects 1ms
+ ✓ src/m43.test.ts > module 43 > arrays 1ms
+ ✓ src/m43.test.ts > module 43 > truthy 0ms
+ ✓ src/m44.test.ts > module 44 > adds 2ms
+ ✓ src/m44.test.ts > module 44 > concats 0ms
+ ✓ src/m44.test.ts > module 44 > objects 1ms
+ ✓ src/m44.test.ts > module 44 > arrays 1ms
+ ✓ src/m44.test.ts > module 44 > truthy 0ms
+ ✓ src/m45.test.ts > module 45 > adds 2ms
+ ✓ src/m45.test.ts > module 45 > concats 0ms
+ ✓ src/m45.test.ts > module 45 > objects 1ms
+ ✓ src/m45.test.ts > module 45 > arrays 2ms
+ ✓ src/m45.test.ts > module 45 > truthy 0ms
+ ✓ src/m46.test.ts > module 46 > adds 1ms
+ ✓ src/m46.test.ts > module 46 > concats 0ms
+ ✓ src/m46.test.ts > module 46 > objects 1ms
+ ✓ src/m46.test.ts > module 46 > arrays 1ms
+ ✓ src/m46.test.ts > module 46 > truthy 0ms
+ ✓ src/m47.test.ts > module 47 > adds 2ms
+ ✓ src/m47.test.ts > module 47 > concats 0ms
+ ✓ src/m47.test.ts > module 47 > objects 1ms
+ ✓ src/m47.test.ts > module 47 > arrays 1ms
+ ✓ src/m47.test.ts > module 47 > truthy 0ms
+ ✓ src/m48.test.ts > module 48 > adds 1ms
+ ✓ src/m48.test.ts > module 48 > concats 0ms
+ ✓ src/m48.test.ts > module 48 > objects 1ms
+ ✓ src/m48.test.ts > module 48 > arrays 1ms
+ ✓ src/m48.test.ts > module 48 > truthy 0ms
+ ✓ src/m49.test.ts > module 49 > adds 2ms
+ ✓ src/m49.test.ts > module 49 > concats 0ms
+ ✓ src/m49.test.ts > module 49 > objects 1ms
+ ✓ src/m49.test.ts > module 49 > arrays 1ms
+ ✓ src/m49.test.ts > module 49 > truthy 0ms
+ ✓ src/m50.test.ts > module 50 > adds 1ms
+ ✓ src/m50.test.ts > module 50 > concats 0ms
+ ✓ src/m50.test.ts > module 50 > objects 1ms
+ ✓ src/m50.test.ts > module 50 > arrays 1ms
+ ✓ src/m50.test.ts > module 50 > truthy 0ms
+ ✓ src/m51.test.ts > module 51 > adds 1ms
+ ✓ src/m51.test.ts > module 51 > concats 0ms
+ ✓ src/m51.test.ts > module 51 > objects 1ms
+ ✓ src/m51.test.ts > module 51 > arrays 1ms
+ ✓ src/m51.test.ts > module 51 > truthy 0ms
+ ✓ src/m52.test.ts > module 52 > adds 2ms
+ ✓ src/m52.test.ts > module 52 > concats 0ms
+ ✓ src/m52.test.ts > module 52 > objects 1ms
+ ✓ src/m52.test.ts > module 52 > arrays 1ms
+ ✓ src/m52.test.ts > module 52 > truthy 0ms
+ ✓ src/m53.test.ts > module 53 > adds 1ms
+ ✓ src/m53.test.ts > module 53 > concats 0ms
+ ✓ src/m53.test.ts > module 53 > objects 1ms
+ ✓ src/m53.test.ts > module 53 > arrays 1ms
+ ✓ src/m53.test.ts > module 53 > truthy 0ms
+ ✓ src/m54.test.ts > module 54 > adds 1ms
+ ✓ src/m54.test.ts > module 54 > concats 0ms
+ ✓ src/m54.test.ts > module 54 > objects 1ms
+ ✓ src/m54.test.ts > module 54 > arrays 1ms
+ ✓ src/m54.test.ts > module 54 > truthy 0ms
+ ✓ src/m55.test.ts > module 55 > adds 2ms
+ ✓ src/m55.test.ts > module 55 > concats 0ms
+ ✓ src/m55.test.ts > module 55 > objects 1ms
+ ✓ src/m55.test.ts > module 55 > arrays 1ms
+ ✓ src/m55.test.ts > module 55 > truthy 0ms
+ ✓ src/m56.test.ts > module 56 > adds 2ms
+ ✓ src/m56.test.ts > module 56 > concats 0ms
+ ✓ src/m56.test.ts > module 56 > objects 1ms
+ ✓ src/m56.test.ts > module 56 > arrays 1ms
+ ✓ src/m56.test.ts > module 56 > truthy 0ms
+ ✓ src/m57.test.ts > module 57 > adds 2ms
+ ✓ src/m57.test.ts > module 57 > concats 0ms
+ ✓ src/m57.test.ts > module 57 > objects 1ms
+ ✓ src/m57.test.ts > module 57 > arrays 1ms
+ ✓ src/m57.test.ts > module 57 > truthy 0ms
+ ✓ src/m58.test.ts > module 58 > adds 2ms
+ ✓ src/m58.test.ts > module 58 > concats 0ms
+ ✓ src/m58.test.ts > module 58 > objects 1ms
+ ✓ src/m58.test.ts > module 58 > arrays 1ms
+ ✓ src/m58.test.ts > module 58 > truthy 0ms
+ ✓ src/m59.test.ts > module 59 > adds 1ms
+ ✓ src/m59.test.ts > module 59 > concats 0ms
+ ✓ src/m59.test.ts > module 59 > objects 1ms
+ ✓ src/m59.test.ts > module 59 > arrays 1ms
+ ✓ src/m59.test.ts > module 59 > truthy 0ms
+ ✓ src/m60.test.ts > module 60 > adds 1ms
+ ✓ src/m60.test.ts > module 60 > concats 0ms
+ ✓ src/m60.test.ts > module 60 > objects 1ms
+ ✓ src/m60.test.ts > module 60 > arrays 1ms
+ ✓ src/m60.test.ts > module 60 > truthy 0ms
+ ✓ src/m61.test.ts > module 61 > adds 1ms
+ ✓ src/m61.test.ts > module 61 > concats 0ms
+ ✓ src/m61.test.ts > module 61 > objects 1ms
+ ✓ src/m61.test.ts > module 61 > arrays 1ms
+ ✓ src/m61.test.ts > module 61 > truthy 0ms
+ ✓ src/m62.test.ts > module 62 > adds 2ms
+ ✓ src/m62.test.ts > module 62 > concats 0ms
+ ✓ src/m62.test.ts > module 62 > objects 1ms
+ ✓ src/m62.test.ts > module 62 > arrays 1ms
+ ✓ src/m62.test.ts > module 62 > truthy 0ms
+ ✓ src/m63.test.ts > module 63 > adds 3ms
+ ✓ src/m63.test.ts > module 63 > concats 0ms
+ ✓ src/m63.test.ts > module 63 > objects 1ms
+ ✓ src/m63.test.ts > module 63 > arrays 1ms
+ ✓ src/m63.test.ts > module 63 > truthy 0ms
+ ✓ src/m64.test.ts > module 64 > adds 1ms
+ ✓ src/m64.test.ts > module 64 > concats 0ms
+ ✓ src/m64.test.ts > module 64 > objects 1ms
+ ✓ src/m64.test.ts > module 64 > arrays 1ms
+ ✓ src/m64.test.ts > module 64 > truthy 0ms
+ ✓ src/m65.test.ts > module 65 > adds 2ms
+ ✓ src/m65.test.ts > module 65 > concats 0ms
+ ✓ src/m65.test.ts > module 65 > objects 1ms
+ ✓ src/m65.test.ts > module 65 > arrays 1ms
+ ✓ src/m65.test.ts > module 65 > truthy 0ms
+ ✓ src/m66.test.ts > module 66 > adds 1ms
+ ✓ src/m66.test.ts > module 66 > concats 0ms
+ ✓ src/m66.test.ts > module 66 > objects 1ms
+ ✓ src/m66.test.ts > module 66 > arrays 1ms
+ ✓ src/m66.test.ts > module 66 > truthy 0ms
+ ✓ src/m67.test.ts > module 67 > adds 1ms
+ ✓ src/m67.test.ts > module 67 > concats 0ms
+ ✓ src/m67.test.ts > module 67 > objects 1ms
+ ✓ src/m67.test.ts > module 67 > arrays 1ms
+ ✓ src/m67.test.ts > module 67 > truthy 0ms
+ ✓ src/m68.test.ts > module 68 > adds 2ms
+ ✓ src/m68.test.ts > module 68 > concats 0ms
+ ✓ src/m68.test.ts > module 68 > objects 1ms
+ ✓ src/m68.test.ts > module 68 > arrays 1ms
+ ✓ src/m68.test.ts > module 68 > truthy 0ms
+ ✓ src/m69.test.ts > module 69 > adds 1ms
+ ✓ src/m69.test.ts > module 69 > concats 0ms
+ ✓ src/m69.test.ts > module 69 > objects 1ms
+ ✓ src/m69.test.ts > module 69 > arrays 1ms
+ ✓ src/m69.test.ts > module 69 > truthy 0ms
+ ✓ src/m70.test.ts > module 70 > adds 1ms
+ ✓ src/m70.test.ts > module 70 > concats 0ms
+ ✓ src/m70.test.ts > module 70 > objects 1ms
+ ✓ src/m70.test.ts > module 70 > arrays 1ms
+ ✓ src/m70.test.ts > module 70 > truthy 0ms
+ ✓ src/m71.test.ts > module 71 > adds 2ms
+ ✓ src/m71.test.ts > module 71 > concats 0ms
+ ✓ src/m71.test.ts > module 71 > objects 1ms
+ ✓ src/m71.test.ts > module 71 > arrays 1ms
+ ✓ src/m71.test.ts > module 71 > truthy 0ms
+ ✓ src/m72.test.ts > module 72 > adds 2ms
+ ✓ src/m72.test.ts > module 72 > concats 0ms
+ ✓ src/m72.test.ts > module 72 > objects 1ms
+ ✓ src/m72.test.ts > module 72 > arrays 1ms
+ ✓ src/m72.test.ts > module 72 > truthy 0ms
+ ✓ src/m73.test.ts > module 73 > adds 2ms
+ ✓ src/m73.test.ts > module 73 > concats 0ms
+ ✓ src/m73.test.ts > module 73 > objects 1ms
+ ✓ src/m73.test.ts > module 73 > arrays 1ms
+ ✓ src/m73.test.ts > module 73 > truthy 0ms
+ ✓ src/m74.test.ts > module 74 > adds 1ms
+ ✓ src/m74.test.ts > module 74 > concats 0ms
+ ✓ src/m74.test.ts > module 74 > objects 1ms
+ ✓ src/m74.test.ts > module 74 > arrays 1ms
+ ✓ src/m74.test.ts > module 74 > truthy 0ms
+ ✓ src/m75.test.ts > module 75 > adds 2ms
+ ✓ src/m75.test.ts > module 75 > concats 1ms
+ ✓ src/m75.test.ts > module 75 > objects 1ms
+ ✓ src/m75.test.ts > module 75 > arrays 1ms
+ ✓ src/m75.test.ts > module 75 > truthy 0ms
+ ✓ src/m76.test.ts > module 76 > adds 1ms
+ ✓ src/m76.test.ts > module 76 > concats 1ms
+ ✓ src/m76.test.ts > module 76 > objects 1ms
+ ✓ src/m76.test.ts > module 76 > arrays 1ms
+ ✓ src/m76.test.ts > module 76 > truthy 0ms
+ ✓ src/m78.test.ts > module 78 > adds 1ms
+ ✓ src/m78.test.ts > module 78 > concats 0ms
+ ✓ src/m78.test.ts > module 78 > objects 1ms
+ ✓ src/m78.test.ts > module 78 > arrays 1ms
+ ✓ src/m78.test.ts > module 78 > truthy 0ms
+ ✓ src/m79.test.ts > module 79 > adds 2ms
+ ✓ src/m79.test.ts > module 79 > concats 0ms
+ ✓ src/m79.test.ts > module 79 > objects 1ms
+ ✓ src/m79.test.ts > module 79 > arrays 1ms
+ ✓ src/m79.test.ts > module 79 > truthy 0ms
+ ✓ src/m77.test.ts > module 77 > adds 2ms
+ ✓ src/m77.test.ts > module 77 > concats 0ms
+ ✓ src/m77.test.ts > module 77 > objects 1ms
+ ✓ src/m77.test.ts > module 77 > arrays 1ms
+ ✓ src/m77.test.ts > module 77 > truthy 0ms
+ ✓ src/m80.test.ts > module 80 > adds 2ms
+ ✓ src/m80.test.ts > module 80 > concats 0ms
+ ✓ src/m80.test.ts > module 80 > objects 2ms
+ ✓ src/m80.test.ts > module 80 > arrays 1ms
+ ✓ src/m80.test.ts > module 80 > truthy 0ms
+ ✓ src/m81.test.ts > module 81 > adds 2ms
+ ✓ src/m81.test.ts > module 81 > concats 0ms
+ ✓ src/m81.test.ts > module 81 > objects 1ms
+ ✓ src/m81.test.ts > module 81 > arrays 1ms
+ ✓ src/m81.test.ts > module 81 > truthy 0ms
+ ✓ src/m82.test.ts > module 82 > adds 2ms
+ ✓ src/m82.test.ts > module 82 > concats 0ms
+ ✓ src/m82.test.ts > module 82 > objects 1ms
+ ✓ src/m82.test.ts > module 82 > arrays 1ms
+ ✓ src/m82.test.ts > module 82 > truthy 0ms
+ ✓ src/m83.test.ts > module 83 > adds 1ms
+ ✓ src/m83.test.ts > module 83 > concats 0ms
+ ✓ src/m83.test.ts > module 83 > objects 1ms
+ ✓ src/m83.test.ts > module 83 > arrays 1ms
+ ✓ src/m83.test.ts > module 83 > truthy 0ms
+ ✓ src/m84.test.ts > module 84 > adds 3ms
+ ✓ src/m84.test.ts > module 84 > concats 0ms
+ ✓ src/m84.test.ts > module 84 > objects 1ms
+ ✓ src/m84.test.ts > module 84 > arrays 1ms
+ ✓ src/m84.test.ts > module 84 > truthy 0ms
+ ✓ src/m85.test.ts > module 85 > adds 2ms
+ ✓ src/m85.test.ts > module 85 > concats 0ms
+ ✓ src/m85.test.ts > module 85 > objects 1ms
+ ✓ src/m85.test.ts > module 85 > arrays 1ms
+ ✓ src/m85.test.ts > module 85 > truthy 0ms
+ ✓ src/m86.test.ts > module 86 > adds 1ms
+ ✓ src/m86.test.ts > module 86 > concats 0ms
+ ✓ src/m86.test.ts > module 86 > objects 1ms
+ ✓ src/m86.test.ts > module 86 > arrays 1ms
+ ✓ src/m86.test.ts > module 86 > truthy 0ms
+ ✓ src/m87.test.ts > module 87 > adds 2ms
+ ✓ src/m87.test.ts > module 87 > concats 0ms
+ ✓ src/m87.test.ts > module 87 > objects 1ms
+ ✓ src/m87.test.ts > module 87 > arrays 1ms
+ ✓ src/m87.test.ts > module 87 > truthy 0ms
+ ✓ src/m88.test.ts > module 88 > adds 2ms
+ ✓ src/m88.test.ts > module 88 > concats 0ms
+ ✓ src/m88.test.ts > module 88 > objects 1ms
+ ✓ src/m88.test.ts > module 88 > arrays 1ms
+ ✓ src/m88.test.ts > module 88 > truthy 0ms
+ ✓ src/m89.test.ts > module 89 > adds 1ms
+ ✓ src/m89.test.ts > module 89 > concats 0ms
+ ✓ src/m89.test.ts > module 89 > objects 1ms
+ ✓ src/m89.test.ts > module 89 > arrays 1ms
+ ✓ src/m89.test.ts > module 89 > truthy 0ms
+ ✓ src/m91.test.ts > module 91 > adds 1ms
+ ✓ src/m91.test.ts > module 91 > concats 0ms
+ ✓ src/m91.test.ts > module 91 > objects 1ms
+ ✓ src/m91.test.ts > module 91 > arrays 1ms
+ ✓ src/m91.test.ts > module 91 > truthy 0ms
+ ✓ src/m90.test.ts > module 90 > adds 1ms
+ ✓ src/m90.test.ts > module 90 > concats 0ms
+ ✓ src/m90.test.ts > module 90 > objects 1ms
+ ✓ src/m90.test.ts > module 90 > arrays 1ms
+ ✓ src/m90.test.ts > module 90 > truthy 0ms
+ ✓ src/m92.test.ts > module 92 > adds 2ms
+ ✓ src/m92.test.ts > module 92 > concats 0ms
+ ✓ src/m92.test.ts > module 92 > objects 1ms
+ ✓ src/m92.test.ts > module 92 > arrays 1ms
+ ✓ src/m92.test.ts > module 92 > truthy 0ms
+ ✓ src/m93.test.ts > module 93 > adds 2ms
+ ✓ src/m93.test.ts > module 93 > concats 0ms
+ ✓ src/m93.test.ts > module 93 > objects 1ms
+ ✓ src/m93.test.ts > module 93 > arrays 1ms
+ ✓ src/m93.test.ts > module 93 > truthy 0ms
+ ✓ src/m94.test.ts > module 94 > adds 1ms
+ ✓ src/m94.test.ts > module 94 > concats 0ms
+ ✓ src/m94.test.ts > module 94 > objects 1ms
+ ✓ src/m94.test.ts > module 94 > arrays 1ms
+ ✓ src/m94.test.ts > module 94 > truthy 0ms
+ ✓ src/m95.test.ts > module 95 > adds 1ms
+ ✓ src/m95.test.ts > module 95 > concats 0ms
+ ✓ src/m95.test.ts > module 95 > objects 1ms
+ ✓ src/m95.test.ts > module 95 > arrays 1ms
+ ✓ src/m95.test.ts > module 95 > truthy 0ms
+ ✓ src/m97.test.ts > module 97 > adds 2ms
+ ✓ src/m97.test.ts > module 97 > concats 0ms
+ ✓ src/m97.test.ts > module 97 > objects 1ms
+ ✓ src/m97.test.ts > module 97 > arrays 1ms
+ ✓ src/m97.test.ts > module 97 > truthy 0ms
+ ✓ src/m96.test.ts > module 96 > adds 2ms
+ ✓ src/m96.test.ts > module 96 > concats 0ms
+ ✓ src/m96.test.ts > module 96 > objects 1ms
+ ✓ src/m96.test.ts > module 96 > arrays 1ms
+ ✓ src/m96.test.ts > module 96 > truthy 0ms
+ ✓ src/m98.test.ts > module 98 > adds 2ms
+ ✓ src/m98.test.ts > module 98 > concats 0ms
+ ✓ src/m98.test.ts > module 98 > objects 1ms
+ ✓ src/m98.test.ts > module 98 > arrays 2ms
+ ✓ src/m98.test.ts > module 98 > truthy 0ms
+ ✓ src/m99.test.ts > module 99 > adds 2ms
+ ✓ src/m99.test.ts > module 99 > concats 0ms
+ ✓ src/m99.test.ts > module 99 > objects 1ms
+ ✓ src/m99.test.ts > module 99 > arrays 1ms
+ ✓ src/m99.test.ts > module 99 > truthy 0ms
+ × src/bad.test.ts > bad > fails on math 7ms
+   → expected 42 to be 43 // Object.is equality
+ × src/bad.test.ts > bad > fails on objects 3ms
+   → expected { a: 1, b: [ 1, 2 ] } to deeply equal { a: 1, b: [ 1, 3 ] }
+ × src/bad.test.ts > bad > throws 1ms
+   → Cannot read properties of null (reading 'foo')
+ ✓ src/m8.test.ts > module 8 > adds 1ms
+ ✓ src/m8.test.ts > module 8 > concats 0ms
+ ✓ src/m8.test.ts > module 8 > objects 1ms
+ ✓ src/m7.test.ts > module 7 > adds 1ms
+ ✓ src/m7.test.ts > module 7 > concats 0ms
+ ✓ src/m7.test.ts > module 7 > objects 1ms
+ ✓ src/m6.test.ts > module 6 > adds 2ms
+ ✓ src/m6.test.ts > module 6 > concats 0ms
+ ✓ src/m6.test.ts > module 6 > objects 1ms
+ ✓ src/m4.test.ts > module 4 > adds 2ms
+ ✓ src/m4.test.ts > module 4 > concats 1ms
+ ✓ src/m4.test.ts > module 4 > objects 1ms
+ ✓ src/m3.test.ts > module 3 > adds 1ms
+ ✓ src/m3.test.ts > module 3 > concats 0ms
+ ✓ src/m3.test.ts > module 3 > objects 3ms
+ ✓ src/m9.test.ts > module 9 > adds 2ms
+ ✓ src/m9.test.ts > module 9 > concats 0ms
+ ✓ src/m9.test.ts > module 9 > objects 1ms
+ ✓ src/m11.test.ts > module 11 > adds 1ms
+ ✓ src/m11.test.ts > module 11 > concats 0ms
+ ✓ src/m11.test.ts > module 11 > objects 1ms
+ ✓ src/m10.test.ts > module 10 > adds 1ms
+ ✓ src/m10.test.ts > module 10 > concats 0ms
+ ✓ src/m10.test.ts > module 10 > objects 1ms
+ ✓ src/m2.test.ts > module 2 > adds 2ms
+ ✓ src/m2.test.ts > module 2 > concats 0ms
+ ✓ src/m2.test.ts > module 2 > objects 1ms
+ ✓ src/m5.test.ts > module 5 > adds 1ms
+ ✓ src/m5.test.ts > module 5 > concats 0ms
+ ✓ src/m5.test.ts > module 5 > objects 1ms
+ ✓ src/m1.test.ts > module 1 > adds 1ms
+ ✓ src/m1.test.ts > module 1 > concats 0ms
+ ✓ src/m1.test.ts > module 1 > objects 1ms
+ ✓ src/m12.test.ts > module 12 > adds 1ms
+ ✓ src/m12.test.ts > module 12 > concats 0ms
+ ✓ src/m12.test.ts > module 12 > objects 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/bad.test.ts > bad > fails on math
+AssertionError: expected 42 to be 43 // Object.is equality
+
+- Expected
++ Received
+
+- 43
++ 42
+
+ ❯ src/bad.test.ts:4:51
+      2| function compute(x: number) { return x * 2; }
+      3| describe("bad", () => {
+      4|   it("fails on math", () => { expect(compute(21)).toBe(43); });
+       |                                                   ^
+      5|   it("fails on objects", () => { expect({ a: 1, b: [1, 2] }).toEqual({…
+      6|   it("throws", () => { const o: any = null; o.foo(); });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/bad.test.ts > bad > fails on objects
+AssertionError: expected { a: 1, b: [ 1, 2 ] } to deeply equal { a: 1, b: [ 1, 3 ] }
+
+- Expected
++ Received
+
+  {
+    "a": 1,
+    "b": [
+      1,
+-     3,
++     2,
+    ],
+  }
+
+ ❯ src/bad.test.ts:5:62
+      3| describe("bad", () => {
+      4|   it("fails on math", () => { expect(compute(21)).toBe(43); });
+      5|   it("fails on objects", () => { expect({ a: 1, b: [1, 2] }).toEqual({…
+       |                                                              ^
+      6|   it("throws", () => { const o: any = null; o.foo(); });
+      7| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/bad.test.ts > bad > throws
+TypeError: Cannot read properties of null (reading 'foo')
+ ❯ src/bad.test.ts:6:47
+      4|   it("fails on math", () => { expect(compute(21)).toBe(43); });
+      5|   it("fails on objects", () => { expect({ a: 1, b: [1, 2] }).toEqual({…
+      6|   it("throws", () => { const o: any = null; o.foo(); });
+       |                                               ^
+      7| });
+      8|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 120 passed (121)
+      Tests  3 failed | 576 passed (579)
+   Start at  17:35:58
+   Duration  6.61s (import 34%, transform 32%, tests 19%, worker 14%, environment 1%)
+
+    Isolate  121 workers spawned · ~125ms startup each (spawn + environment, per file)
+             at least ~4.90s faster with isolate: false — reuses workers across files instead of one per file
+

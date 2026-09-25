@@ -1,0 +1,364 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/dev/project/py
+collecting ... collected 65 items
+
+test_sample.py::test_ok[0] PASSED                                        [  1%]
+test_sample.py::test_ok[1] PASSED                                        [  3%]
+test_sample.py::test_ok[2] PASSED                                        [  4%]
+test_sample.py::test_ok[3] PASSED                                        [  6%]
+test_sample.py::test_ok[4] PASSED                                        [  7%]
+test_sample.py::test_ok[5] PASSED                                        [  9%]
+test_sample.py::test_ok[6] PASSED                                        [ 10%]
+test_sample.py::test_ok[7] PASSED                                        [ 12%]
+test_sample.py::test_ok[8] PASSED                                        [ 13%]
+test_sample.py::test_ok[9] PASSED                                        [ 15%]
+test_sample.py::test_ok[10] PASSED                                       [ 16%]
+test_sample.py::test_ok[11] PASSED                                       [ 18%]
+test_sample.py::test_ok[12] PASSED                                       [ 20%]
+test_sample.py::test_ok[13] PASSED                                       [ 21%]
+test_sample.py::test_ok[14] PASSED                                       [ 23%]
+test_sample.py::test_ok[15] PASSED                                       [ 24%]
+test_sample.py::test_ok[16] PASSED                                       [ 26%]
+test_sample.py::test_ok[17] PASSED                                       [ 27%]
+test_sample.py::test_ok[18] PASSED                                       [ 29%]
+test_sample.py::test_ok[19] PASSED                                       [ 30%]
+test_sample.py::test_ok[20] PASSED                                       [ 32%]
+test_sample.py::test_ok[21] PASSED                                       [ 33%]
+test_sample.py::test_ok[22] PASSED                                       [ 35%]
+test_sample.py::test_ok[23] PASSED                                       [ 36%]
+test_sample.py::test_ok[24] PASSED                                       [ 38%]
+test_sample.py::test_ok[25] PASSED                                       [ 40%]
+test_sample.py::test_ok[26] PASSED                                       [ 41%]
+test_sample.py::test_ok[27] PASSED                                       [ 43%]
+test_sample.py::test_ok[28] PASSED                                       [ 44%]
+test_sample.py::test_ok[29] PASSED                                       [ 46%]
+test_sample.py::test_ok[30] PASSED                                       [ 47%]
+test_sample.py::test_ok[31] PASSED                                       [ 49%]
+test_sample.py::test_ok[32] PASSED                                       [ 50%]
+test_sample.py::test_ok[33] PASSED                                       [ 52%]
+test_sample.py::test_ok[34] PASSED                                       [ 53%]
+test_sample.py::test_ok[35] PASSED                                       [ 55%]
+test_sample.py::test_ok[36] PASSED                                       [ 56%]
+test_sample.py::test_ok[37] PASSED                                       [ 58%]
+test_sample.py::test_ok[38] PASSED                                       [ 60%]
+test_sample.py::test_ok[39] PASSED                                       [ 61%]
+test_sample.py::test_ok[40] PASSED                                       [ 63%]
+test_sample.py::test_ok[41] PASSED                                       [ 64%]
+test_sample.py::test_ok[42] PASSED                                       [ 66%]
+test_sample.py::test_ok[43] PASSED                                       [ 67%]
+test_sample.py::test_ok[44] PASSED                                       [ 69%]
+test_sample.py::test_ok[45] PASSED                                       [ 70%]
+test_sample.py::test_ok[46] PASSED                                       [ 72%]
+test_sample.py::test_ok[47] PASSED                                       [ 73%]
+test_sample.py::test_ok[48] PASSED                                       [ 75%]
+test_sample.py::test_ok[49] PASSED                                       [ 76%]
+test_sample.py::test_ok[50] PASSED                                       [ 78%]
+test_sample.py::test_ok[51] PASSED                                       [ 80%]
+test_sample.py::test_ok[52] PASSED                                       [ 81%]
+test_sample.py::test_ok[53] PASSED                                       [ 83%]
+test_sample.py::test_ok[54] PASSED                                       [ 84%]
+test_sample.py::test_ok[55] PASSED                                       [ 86%]
+test_sample.py::test_ok[56] PASSED                                       [ 87%]
+test_sample.py::test_ok[57] PASSED                                       [ 89%]
+test_sample.py::test_ok[58] PASSED                                       [ 90%]
+test_sample.py::test_ok[59] PASSED                                       [ 92%]
+test_sample.py::test_math FAILED                                         [ 93%]
+test_sample.py::test_div FAILED                                          [ 95%]
+test_sample.py::test_param_fail[0] PASSED                                [ 96%]
+test_sample.py::test_param_fail[1] FAILED                                [ 98%]
+test_sample.py::test_param_fail[2] PASSED                                [100%]
+
+=================================== FAILURES ===================================
+__________________________________ test_math ___________________________________
+
+    def test_math():
+        x = {"a": 1, "b": [1, 2, 3]}
+>       assert x["b"] == [1, 2, 4]
+E       AssertionError: assert [1, 2, 3] == [1, 2, 4]
+E         
+E         At index 2 diff: 3 != 4
+E         
+E         Full diff:
+E           [
+E               1,
+E               2,...
+E         
+E         ...Full output truncated (5 lines hidden), use '-vv' to show
+
+test_sample.py:10: AssertionError
+___________________________________ test_div ___________________________________
+
+    def test_div():
+>       helper(3)
+
+test_sample.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+v = 3
+
+    def helper(v):
+>       return v / 0
+               ^^^^^
+E       ZeroDivisionError: division by zero
+
+test_sample.py:13: ZeroDivisionError
+______________________________ test_param_fail[1] ______________________________
+
+i = 1
+
+    @pytest.mark.parametrize("i", range(3))
+    def test_param_fail(i):
+>       assert i != 1, "one is bad"
+E       AssertionError: one is bad
+E       assert 1 != 1
+
+test_sample.py:20: AssertionError
+=============================== warnings summary ===============================
+test_sample.py::test_ok[0]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 0
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[1]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 1
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[2]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 2
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[3]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 3
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[4]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 4
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[5]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 5
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[6]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 6
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[7]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 7
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[8]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 8
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[9]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 9
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[10]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 10
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[11]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 11
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[12]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 12
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[13]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 13
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[14]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 14
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[15]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 15
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[16]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 16
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[17]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 17
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[18]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 18
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[19]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 19
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[20]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 20
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[21]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 21
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[22]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 22
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[23]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 23
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[24]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 24
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[25]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 25
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[26]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 26
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[27]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 27
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[28]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 28
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[29]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 29
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[30]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 30
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[31]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 31
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[32]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 32
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[33]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 33
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[34]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 34
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[35]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 35
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[36]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 36
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[37]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 37
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[38]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 38
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[39]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 39
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[40]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 40
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[41]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 41
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[42]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 42
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[43]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 43
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[44]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 44
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[45]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 45
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[46]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 46
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[47]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 47
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[48]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 48
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[49]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 49
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[50]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 50
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[51]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 51
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[52]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 52
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[53]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 53
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[54]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 54
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[55]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 55
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[56]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 56
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[57]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 57
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[58]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 58
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+test_sample.py::test_ok[59]
+  /home/dev/project/py/test_sample.py:5: DeprecationWarning: deprecated thing 59
+    warnings.warn("deprecated thing %d" % i, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED test_sample.py::test_math - AssertionError: assert [1, 2, 3] == [1, 2, 4]
+FAILED test_sample.py::test_div - ZeroDivisionError: division by zero
+FAILED test_sample.py::test_param_fail[1] - AssertionError: one is bad
+================== 3 failed, 62 passed, 60 warnings in 0.05s ===================

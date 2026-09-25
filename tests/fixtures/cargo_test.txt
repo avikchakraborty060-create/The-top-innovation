@@ -1,0 +1,68 @@
+   Compiling sample v0.1.0 (/home/dev/project/crate)
+warning: unused variable: `x`
+ --> src/lib.rs:3:23
+  |
+3 | pub fn shadow() { let x = 1; let x = 2; }
+  |                       ^ help: if this is intentional, prefix it with an underscore: `_x`
+  |
+  = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `x`
+ --> src/lib.rs:3:34
+  |
+3 | pub fn shadow() { let x = 1; let x = 2; }
+  |                                  ^ help: if this is intentional, prefix it with an underscore: `_x`
+
+warning: function `unused_fn` is never used
+ --> src/lib.rs:2:4
+  |
+2 | fn unused_fn() {}
+  |    ^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sample` (lib) generated 3 warnings (run `cargo fix --lib -p sample` to apply 2 suggestions)
+warning: `sample` (lib test) generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.03s
+     Running unittests src/lib.rs (target/debug/deps/sample-2ea40f54247844d2)
+
+running 4 tests
+test tests::ok1 ... ok
+test tests::ok2 ... ok
+test tests::ok3 ... ok
+test tests::bad ... FAILED
+
+failures:
+
+---- tests::bad stdout ----
+
+thread 'tests::bad' (2391) panicked at src/lib.rs:10:24:
+assertion `left == right` failed: math is hard
+  left: 2
+ right: 3
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/std/src/panicking.rs:689:5
+   1: core::panicking::panic_fmt
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/core/src/panicking.rs:80:14
+   2: core::panicking::assert_failed_inner
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/core/src/panicking.rs:434:23
+   3: core::panicking::assert_failed
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/core/src/panicking.rs:394:5
+   4: sample::tests::bad
+             at ./src/lib.rs:10:24
+   5: sample::tests::bad::{{closure}}
+             at ./src/lib.rs:10:21
+   6: core::ops::function::FnOnce::call_once
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/core/src/ops/function.rs:250:5
+   7: core::ops::function::FnOnce::call_once
+             at /rustc/e408947bfd200af42db322daf0fadfe7e26d3bd1/library/core/src/ops/function.rs:250:5
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+
+failures:
+    tests::bad
+
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+error: test failed, to rerun pass `--lib`

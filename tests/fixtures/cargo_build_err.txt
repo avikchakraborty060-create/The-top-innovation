@@ -1,0 +1,39 @@
+   Compiling sample v0.1.0 (/home/dev/project/crate)
+error[E0308]: mismatched types
+ --> src/broken.rs:1:42
+  |
+1 | pub fn broken() -> i32 { let s: String = 5; s }
+  |                                 ------   ^ expected `String`, found integer
+  |                                 |
+  |                                 expected due to this
+  |
+help: try using a conversion method
+  |
+1 | pub fn broken() -> i32 { let s: String = 5.to_string(); s }
+  |                                           ++++++++++++
+
+error[E0308]: mismatched types
+ --> src/broken.rs:1:45
+  |
+1 | pub fn broken() -> i32 { let s: String = 5; s }
+  |                    ---                      ^ expected `i32`, found `String`
+  |                    |
+  |                    expected `i32` because of return type
+
+warning: unused variable: `x`
+ --> src/lib.rs:3:23
+  |
+3 | pub fn shadow() { let x = 1; let x = 2; }
+  |                       ^ help: if this is intentional, prefix it with an underscore: `_x`
+  |
+  = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `x`
+ --> src/lib.rs:3:34
+  |
+3 | pub fn shadow() { let x = 1; let x = 2; }
+  |                                  ^ help: if this is intentional, prefix it with an underscore: `_x`
+
+For more information about this error, try `rustc --explain E0308`.
+warning: `sample` (lib) generated 2 warnings
+error: could not compile `sample` (lib) due to 2 previous errors; 2 warnings emitted

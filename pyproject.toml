@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skimread"
+version = "0.1.0"
+description = "Skim before you read: a lossless context guard that cuts the tokens AI coding agents spend on big file reads and noisy command output."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "skimread contributors" }]
+keywords = ["ai", "agents", "claude-code", "codex", "tokens", "context", "mcp", "hooks"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Build Tools",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/avikchakraborty060-create/The-top-innovation"
+
+[project.scripts]
+skimread = "skimread.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["skimread*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
