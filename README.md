@@ -1,18 +1,30 @@
 # skimread — skim before you read
 
-**A lossless context guard for AI coding agents.** Zero dependencies, runs locally, works with Claude Code out of the box and with any other agent (Codex, Cursor, Aider, your own) through a CLI and an MCP server.
+**A lossless context guard for AI coding agents.** Zero dependencies, runs entirely on your machine, MIT licensed. Works with Claude Code out of the box, and with any other agent (Codex, Cursor, Aider, Copilot, your own) through a CLI and an MCP server.
 
-AI coding agents burn most of their tokens on two things:
+## What is it?
 
-1. **Reading big files whole.** The agent wants one function and reads 2,000 lines to find it. Every session, again.
-2. **Noisy command output.** `pytest -v` prints 1,500 `PASSED` lines to tell you about 2 failures. `npm install` prints 40 deprecation warnings. `cargo build` lists 37 crates it compiled.
+When you use an AI coding agent, you pay for every token it reads. Most of that money goes to two things the agent does not actually need:
 
-Tools that compress shell output already exist (RTK, token-saver, condense) and they all share two problems. First, they cannot touch the agent's own file-reading tool, which is the bigger sink. Second, they are lossy: when the compressor dropped the one line the agent needed, the agent re-runs the command, and an [independent benchmark](https://blog.jetbrains.com/ai/2026/07/rtk-claude-code-token-savings/) found that this can cost *more* than not compressing at all.
+1. **Reading big files whole.** The agent wants one function and reads all 2,000 lines of the file to find it. Next session it does it again.
+2. **Reading noisy command output.** `pytest -v` prints 1,500 `PASSED` lines to tell you about 2 failures. `npm install` prints 40 deprecation warnings. `cargo build` lists every crate it compiled.
 
-skimread fixes both:
+skimread sits between the agent and those two sources and hands the agent a *skim* first:
 
-- **The Read guard.** When Claude Code is about to read a large file without a line range, skimread hands it a structural outline instead (symbols, headings, keys, with line ranges) and says "read the slice you need". The agent then reads 60 lines instead of 2,000. Any ranged read is always allowed, and if the agent insists on the whole file it gets it.
-- **Lossless digests.** Every command's full output is kept locally. The digest keeps errors, failures, stack frames in *your* code, and summaries, folds the rest, and ends with a handle: `skimread show 42`, `skimread show 42 120-180`, `skimread show 42 --grep TypeError -C 3`. Nothing is ever more than one cheap call away, so the agent never has to re-run a build to see what it missed.
+- **For files: an outline instead of the file.** When the agent is about to read a large file, skimread gives it a map of the file (functions, classes, headings, keys, each with its line range) and says "read only the slice you need". The agent then reads 60 lines instead of 2,000.
+- **For commands: a digest instead of the dump.** Noisy commands run through skimread. The agent sees the errors, the failing tests, the stack frames in *your* code, and the summary line. The 1,500 `PASSED` lines are folded into one line that says so.
+
+The key word is **lossless**. Nothing is thrown away. Every command's full output is kept on your disk, and every digest ends with a handle (`skimread show 42`, `skimread show 42 120-180`, `skimread show 42 --grep TypeError`). Every outline tells the agent exactly which line range to read next. The agent is never stuck and never has to re-run a build to see what it missed.
+
+### Why not one of the existing output compressors?
+
+Tools that compress shell output already exist (RTK, token-saver, condense). They share two limits. They cannot touch the agent's own file-reading tool, which is the bigger token sink. And they are lossy: when the compressor drops the one line the agent needed, the agent re-runs the command, and an [independent benchmark](https://blog.jetbrains.com/ai/2026/07/rtk-claude-code-token-savings/) found that this can cost *more* than not compressing at all. skimread guards file reads too, and keeps everything retrievable.
+
+### What it is not
+
+- Not a cloud service. No network calls, no accounts, no telemetry. `~/.skimread` is the whole state.
+- Not an LLM. Everything is deterministic parsing and folding, so it runs in milliseconds and costs nothing.
+- Not a summariser that guesses. It never rewrites a line; it only hides lines it can name and count, and tells you how to get them back.
 
 ## Numbers
 
@@ -41,29 +53,34 @@ The last two rows are the point: when the output is already pure signal (a short
 
 A 4,063-line Go file (`net/http/server.go`, ~36k tokens) becomes a ~600-token map of structs and methods with line ranges. `skimread stats` shows what it has saved you so far, in tokens and dollars.
 
-## Install
+## How to use
+
+### 1. Install (30 seconds)
+
+Needs Python 3.9 or newer, nothing else.
 
 ```bash
 pipx install git+https://github.com/avikchakraborty060-create/The-top-innovation
 # or: uv tool install git+https://github.com/avikchakraborty060-create/The-top-innovation
-# or, inside any Python 3.9+ environment: pip install git+https://github.com/avikchakraborty060-create/The-top-innovation
+# or, inside any Python environment: pip install git+https://github.com/avikchakraborty060-create/The-top-innovation
+skimread --version
 ```
 
-No dependencies. Everything is stored under `~/.skimread` (owner-only permissions) and pruned after 7 days / 300 runs.
+Everything skimread stores lives under `~/.skimread` with owner-only permissions and is pruned after 7 days or 300 runs.
 
-## Claude Code (one command)
+### 2. Claude Code: one command
 
 ```bash
 skimread setup claude            # global: ~/.claude/settings.json
 skimread setup claude --project  # or per project: .claude/settings.json
 ```
 
-Restart Claude Code. From then on:
+Restart Claude Code. That is all. From then on:
 
-- A `Read` of a file over 400 lines (or 16 KB) without `offset`/`limit` is answered with an outline and the instruction to read a range. The same full read is allowed on the second attempt in the same session, so the agent is never stuck.
-- `Bash` commands that are known to be noisy (`npm`, `pytest`, `cargo`, `go`, `tsc`, `docker`, `git diff`, `find`, …) are rewritten to run through `skimread run`, so Claude sees the digest and the handle. The permission rule `Bash(<path-to-skimread>:*)` is added so this does not cause extra prompts.
+- When Claude tries to `Read` a file over 400 lines (or 16 KB) without a line range, it gets the outline and the instruction to read a range instead. A ranged read is always allowed. If Claude asks for the same whole file a second time in the session, it gets it, so it is never stuck.
+- When Claude runs a command known to be noisy (`npm`, `pytest`, `cargo`, `go`, `tsc`, `docker`, `git diff`, `find`, and about 100 others) the command is rewritten to run through `skimread run`. Claude sees the digest and the handle. The permission rule `Bash(<path-to-skimread>:*)` is added so this causes no extra prompts.
 
-What the hook does to a big read:
+This is what Claude sees instead of a 2,014-line file:
 
 ```
 skimread: src/server.py is 2,014 lines (~20k tokens). Read only the part you need: call Read again
@@ -79,7 +96,7 @@ Outline: 2,014 lines, ~20k tokens (python)
    ...
 ```
 
-What Claude sees after `pytest -v` on a suite of 1,504 tests:
+And this is what Claude sees after `pytest -v` on a suite of 1,504 tests:
 
 ```
 $ pytest -v test_many.py  ·  exit 1 in 1.2s
@@ -100,37 +117,42 @@ FAILED test_many.py::test_some_fail[3] - AssertionError: role mismatch for user 
 [skimread #42: 1546 lines, ~34k tok → 473. Full/slice/search: skimread show 42 [A-B | --grep RE]]
 ```
 
-Options:
+Tuning:
 
 ```bash
 skimread setup claude --wrap all     # route every safe Bash command through skimread
 skimread setup claude --wrap off     # Read guard only, leave Bash alone
-skimread setup claude --uninstall
-skimread config read_threshold_lines 600   # guard only files longer than this
+skimread setup claude --uninstall    # remove the hook and the permission rule
+skimread config read_threshold_lines 600   # guard only files longer than this (default 400)
 skimread config budget 4000                # digest size in characters (default 6000)
-skimread setup print                       # just print the settings.json snippet
+skimread setup print                       # just print the settings.json snippet to paste yourself
 ```
 
-The Bash wrapper never touches commands that change shell state (`cd` at the end, `export`, `source`), redirect to files, run in the background, look interactive, or are destructive/privileged (`rm`, `sudo`, `git push`, `git commit`, `curl | sh`, …). Those run exactly as Claude wrote them, under your normal permission rules. A leading `cd dir && …` is preserved outside the wrapper so the shell's working directory still changes.
+Safety: the Bash wrapper never touches commands that change shell state (`cd` at the end, `export`, `source`), redirect to files, run in the background, look interactive, or are destructive or privileged (`rm`, `sudo`, `git push`, `git commit`, `curl | sh`, and so on). Those run exactly as Claude wrote them, under your normal permission rules. A leading `cd dir && …` is kept outside the wrapper so the working directory still changes.
 
-## Any other agent
+### 3. Codex, Cursor, Aider, Copilot, or your own agent
 
-**CLI.** Tell the agent (in `AGENTS.md`, `CLAUDE.md`, `.cursorrules`, a system prompt) to use it; `skimread setup agents` prints a ready-made snippet:
+Any agent that can run shell commands can use skimread through the CLI. Put this in the agent's rules file (`AGENTS.md`, `.cursorrules`, a system prompt); `skimread setup agents` prints a ready-made snippet:
 
 ```bash
 skimread outline src/server.py           # map of the file with line ranges
 skimread read src/server.py 142-229      # numbered slice
-skimread run -c "npm test"               # digest + handle   (also: skimread npm test)
+skimread run -c "npm test"               # digest + handle   (shorthand: skimread npm test)
 skimread show 42                         # full stored output
 skimread show 42 300-360                 # slice
 skimread show 42 --grep "Error" -C 3     # search with context
 skimread list                            # recent runs
-skimread stats                           # tokens and dollars saved
 ```
 
-**MCP.** `skimread mcp` is a stdio MCP server with tools `run`, `show`, `outline`, `read`, `list`. `skimread setup mcp` prints the config block for `mcpServers`.
+Agents that speak MCP can use it as a server instead. `skimread mcp` is a stdio MCP server with tools `run`, `show`, `outline`, `read`, `list`; `skimread setup mcp` prints the config block for `mcpServers`. Anything on stdin works too: `cmd 2>&1 | skimread pipe --cmd "cmd"`.
 
-**Pipe.** `cmd 2>&1 | skimread pipe --cmd "cmd"` digests anything on stdin.
+### 4. See what it saved you
+
+```bash
+skimread stats                 # tokens and dollars saved, all time, by format
+skimread stats --price 15      # use your model's input price per million tokens
+skimread stats --json
+```
 
 ## How it works
 
