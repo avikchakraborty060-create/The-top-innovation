@@ -60,11 +60,13 @@ A 4,063-line Go file (`net/http/server.go`, ~36k tokens) becomes a ~600-token ma
 Needs Python 3.9 or newer, nothing else.
 
 ```bash
-pipx install git+https://github.com/avikchakraborty060-create/The-top-innovation
-# or: uv tool install git+https://github.com/avikchakraborty060-create/The-top-innovation
-# or, inside any Python environment: pip install git+https://github.com/avikchakraborty060-create/The-top-innovation
+pipx install skimread          # recommended: isolated, on your PATH
+# or: uv tool install skimread
+# or, inside any Python environment: pip install skimread
 skimread --version
 ```
+
+Latest development version straight from GitHub: `pipx install git+https://github.com/avikchakraborty060-create/The-top-innovation`.
 
 Everything skimread stores lives under `~/.skimread` with owner-only permissions and is pruned after 7 days or 300 runs.
 
