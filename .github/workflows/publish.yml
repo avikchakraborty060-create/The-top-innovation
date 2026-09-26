@@ -1,0 +1,23 @@
+# Publishes skimread to PyPI whenever a GitHub Release is published.
+# One-time setup (no secrets needed): on https://pypi.org/manage/account/publishing/
+# add a "pending publisher" with owner=avikchakraborty060-create, repo=The-top-innovation,
+# workflow=publish.yml, environment=pypi. Then create a release tagged v0.1.0.
+name: publish
+on:
+  release:
+    types: [published]
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install build && python -m build
+      - run: python -m pip install dist/*.whl && skimread --version && python -m pip install pytest && python -m pytest -q
+      - uses: pypa/gh-action-pypi-publish@release/v1
