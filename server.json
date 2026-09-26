@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
+  "name": "io.github.avikchakraborty060-create/skimread",
+  "description": "Lossless context guard for coding agents: run commands and get a short digest with a handle to the full output, outline big files, read line ranges.",
+  "repository": {
+    "url": "https://github.com/avikchakraborty060-create/The-top-innovation",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registry_type": "pypi",
+      "identifier": "skimread",
+      "version": "0.1.0",
+      "runtime_hint": "uvx",
+      "package_arguments": [
+        { "type": "positional", "value": "mcp" }
+      ],
+      "transport": { "type": "stdio" }
+    }
+  ]
+}
