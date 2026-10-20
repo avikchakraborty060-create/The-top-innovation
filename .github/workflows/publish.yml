@@ -1,11 +1,13 @@
-# Publishes skimread to PyPI whenever a GitHub Release is published.
-# One-time setup (no secrets needed): on https://pypi.org/manage/account/publishing/
-# add a "pending publisher" with owner=avikchakraborty060-create, repo=The-top-innovation,
-# workflow=publish.yml, environment=pypi. Then create a release tagged v0.1.0.
+# Publishes skimread when a GitHub Release is published:
+#   1. build, test and upload to PyPI (trusted publishing, no secrets)
+#   2. list the new version in the official MCP registry (GitHub OIDC, no secrets)
+# Run it by hand from the Actions tab to retry a failed registry step; the PyPI
+# upload skips files that already exist.
 name: publish
 on:
   release:
     types: [published]
+  workflow_dispatch:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -21,3 +23,27 @@ jobs:
       - run: python -m pip install build && python -m build
       - run: python -m pip install dist/*.whl && skimread --version && python -m pip install pytest && python -m pytest -q
       - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
+
+  mcp-registry:
+    needs: build-and-publish
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait until this version is visible on PyPI
+        run: |
+          VERSION=$(python3 -c "import json; print(json.load(open('server.json'))['version'])")
+          for i in $(seq 1 30); do
+            if curl -sf "https://pypi.org/pypi/skimread/$VERSION/json" > /dev/null; then echo "skimread $VERSION is on PyPI"; exit 0; fi
+            sleep 10
+          done
+          echo "skimread $VERSION never appeared on PyPI" >&2; exit 1
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+      - run: ./mcp-publisher login github-oidc
+      - run: ./mcp-publisher publish

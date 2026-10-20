@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Listed in the official MCP registry as `io.github.avikchakraborty060-create/skimread`. No code changes.
+
 ## 0.1.0
 
 First release.

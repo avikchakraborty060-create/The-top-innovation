@@ -1,5 +1,7 @@
 # skimread — skim before you read
 
+<!-- mcp-name: io.github.avikchakraborty060-create/skimread -->
+
 **A lossless context guard for AI coding agents.** Zero dependencies, runs entirely on your machine, MIT licensed. Works with Claude Code out of the box, and with any other agent (Codex, Cursor, Aider, Copilot, your own) through a CLI and an MCP server.
 
 ## What is it?

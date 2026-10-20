@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "skimread"
-version = "0.1.0"
+version = "0.1.1"
 description = "Skim before you read: a lossless context guard that cuts the tokens AI coding agents spend on big file reads and noisy command output."
 readme = "README.md"
 license = { text = "MIT" }

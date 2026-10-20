@@ -1,22 +1,28 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.avikchakraborty060-create/skimread",
-  "description": "Lossless context guard for coding agents: run commands and get a short digest with a handle to the full output, outline big files, read line ranges.",
+  "title": "skimread",
+  "description": "Lossless context guard for coding agents: command digests, file outlines, line-range reads.",
   "repository": {
     "url": "https://github.com/avikchakraborty060-create/The-top-innovation",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
-      "registry_type": "pypi",
+      "registryType": "pypi",
       "identifier": "skimread",
-      "version": "0.1.0",
-      "runtime_hint": "uvx",
-      "package_arguments": [
-        { "type": "positional", "value": "mcp" }
-      ],
-      "transport": { "type": "stdio" }
+      "version": "0.1.1",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
     }
   ]
 }
