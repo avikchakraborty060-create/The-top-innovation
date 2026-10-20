@@ -45,5 +45,13 @@ jobs:
       - name: Install mcp-publisher
         run: |
           curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
-      - run: ./mcp-publisher login github-oidc
-      - run: ./mcp-publisher publish
+      - name: Publish to the MCP registry (skipped if this version is already listed)
+        run: |
+          NAME=$(python3 -c "import json; print(json.load(open('server.json'))['name'])")
+          VERSION=$(python3 -c "import json; print(json.load(open('server.json'))['version'])")
+          if curl -sf "https://registry.modelcontextprotocol.io/v0/servers?search=$NAME&version=latest" \
+              | python3 -c "import sys,json; v=sys.argv[1]; sys.exit(0 if any(s['server']['version']==v for s in json.load(sys.stdin).get('servers',[])) else 1)" "$VERSION"; then
+            echo "$NAME $VERSION is already in the MCP registry; nothing to do"; exit 0
+          fi
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
